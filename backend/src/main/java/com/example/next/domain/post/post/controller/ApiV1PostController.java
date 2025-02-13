@@ -81,12 +81,12 @@ public class ApiV1PostController {
     public RsData<PageDto> getMines(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "3") int pageSize,
-            @RequestParam(defaultValue = "title") String keywordType,
+            @RequestParam(defaultValue = "title") SearchKeywordType keywordType,
             @RequestParam(defaultValue = "") String keyword
     ) {
 
         Member actor = rq.getActor();
-        Page<Post> pagePost = postService.getMines(actor, page, pageSize, SearchKeywordType.TITLE, keyword);
+        Page<Post> pagePost = postService.getMines(actor, page, pageSize, keywordType, keyword);
 
         return new RsData<>("200-1",
                 "내 글 목록 조회가 완료되었습니다.",
