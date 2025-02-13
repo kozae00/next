@@ -3,8 +3,18 @@ import { components } from "@/src/lib/backend/apiV1/schema";
 type PostDto = components["schemas"]["PostDto"];
 type PostItemPageDto = components["schemas"]["PageDto"];
 
-export default async function Page() {
-  const response = await fetch("http://localhost:8080/api/v1/posts");
+export default async function Page({
+    searchParams,
+  }: {
+    searchParams: {
+      keywordType?: "title" | "content";
+      keyword: string;
+    };
+  }) {
+    const { keywordType = "title", keyword = "" } = await searchParams;
+    const response = await fetch(
+      `http://localhost:8080/api/v1/posts?keywordType=${keywordType}&keyword=${keyword}`
+    );
 
   if (!response.ok) {
     throw new Error("에러");
