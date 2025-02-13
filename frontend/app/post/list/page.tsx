@@ -1,20 +1,7 @@
-type PostDto = {
-  id: number;
-  createdDate: string;
-  modifiedDate: string;
-  authorId: number;
-  authorName: string;
-  title: string;
-  published: boolean;
-  listed: boolean;
-};
-type PostItemPageDto = {
-  currentPageNo: number;
-  pageSize: number;
-  totalPages: number;
-  totalItems: number;
-  items: PostDto[];
-};
+import { components } from "@/src/lib/backend/apiV1/schema";
+
+type PostDto = components["schemas"]["PostDto"];
+type PostItemPageDto = components["schemas"]["PageDto"];
 
 export default async function Page() {
   const response = await fetch("http://localhost:8080/api/v1/posts");
@@ -41,7 +28,7 @@ export default async function Page() {
       <hr />
 
       <ul>
-        {pageDto.items.map((item: PostDto) => {
+        {pageDto.items?.map((item: PostDto) => {
           return (
             <li className="border-2 border-red-500 my-2 p-2" key={item.id}>
               <div>id : {item.id}</div>

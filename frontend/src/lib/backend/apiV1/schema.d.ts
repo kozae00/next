@@ -298,6 +298,7 @@ export interface components {
             pageSize?: number;
         };
         PostDto: {
+            items: any;
             /** Format: int64 */
             id?: number;
             /** Format: date-time */
