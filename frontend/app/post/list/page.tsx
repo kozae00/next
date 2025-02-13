@@ -4,17 +4,17 @@ type PostDto = components["schemas"]["PostDto"];
 type PostItemPageDto = components["schemas"]["PageDto"];
 
 export default async function Page({
-    searchParams,
-  }: {
-    searchParams: {
-      keywordType?: "title" | "content";
-      keyword: string;
-    };
-  }) {
-    const { keywordType = "title", keyword = "" } = await searchParams;
-    const response = await fetch(
-      `http://localhost:8080/api/v1/posts?keywordType=${keywordType}&keyword=${keyword}`
-    );
+  searchParams,
+}: {
+  searchParams: {
+    keywordType?: "title" | "content";
+    keyword: string;
+  };
+}) {
+  const { keywordType = "title", keyword = "" } = await searchParams;
+  const response = await fetch(
+    `http://localhost:8080/api/v1/posts?keywordType=${keywordType}&keyword=${keyword}`
+  );
 
   if (!response.ok) {
     throw new Error("에러");
@@ -36,6 +36,20 @@ export default async function Page({
       <div>pageSize : {pageDto.pageSize}</div>
 
       <hr />
+
+      <form>
+        <select name="keywordType" defaultValue={keywordType}>
+          <option value="title">제목</option>
+          <option value="content">내용</option>
+        </select>
+        <input
+          placeholder="검색어 입력"
+          type="text"
+          name="keyword"
+          defaultValue={keyword}
+        />
+        <input type="submit" value="검색" />
+      </form>
 
       <ul>
         {pageDto.items.map((item: PostDto) => {
