@@ -287,18 +287,17 @@ export interface components {
             data?: components["schemas"]["MemberDto"];
         };
         PageDto: {
-            items?: components["schemas"]["PostDto"][];
+            items: components["schemas"]["PostDto"][];
             /** Format: int32 */
-            totalPages?: number;
+            totalPages: number;
             /** Format: int32 */
-            totalItems?: number;
+            totalItems: number;
             /** Format: int32 */
-            currentPageNo?: number;
+            currentPageNo: number;
             /** Format: int32 */
-            pageSize?: number;
+            pageSize: number;
         };
         PostDto: {
-            items: any;
             /** Format: int64 */
             id?: number;
             /** Format: date-time */
