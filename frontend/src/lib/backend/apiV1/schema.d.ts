@@ -222,10 +222,11 @@ export interface components {
         ModifyReqBody: {
             content?: string;
         };
-        RsDataVoid: {
+        Empty: Record<string, never>;
+        RsDataEmpty: {
             code: string;
             msg: string;
-            data: Record<string, never>;
+            data: components["schemas"]["Empty"];
         };
         PostWithContentDto: {
             /** Format: int64 */
@@ -343,6 +344,11 @@ export interface components {
             /** Format: int64 */
             postListedCount: number;
         };
+        RsDataVoid: {
+            code: string;
+            msg: string;
+            data: Record<string, never>;
+        };
     };
     responses: never;
     parameters: never;
@@ -397,7 +403,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+                    "application/json;charset=UTF-8": components["schemas"]["RsDataEmpty"];
                 };
             };
         };
@@ -490,7 +496,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+                    "application/json;charset=UTF-8": components["schemas"]["RsDataEmpty"];
                 };
             };
         };
@@ -587,7 +593,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+                    "application/json;charset=UTF-8": components["schemas"]["RsDataEmpty"];
                 };
             };
         };
@@ -720,7 +726,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+                    "application/json;charset=UTF-8": components["schemas"]["RsDataEmpty"];
                 };
             };
         };
