@@ -223,29 +223,29 @@ export interface components {
             content?: string;
         };
         RsDataVoid: {
-            code?: string;
-            msg?: string;
-            data?: Record<string, never>;
+            code: string;
+            msg: string;
+            data: Record<string, never>;
         };
         PostWithContentDto: {
             /** Format: int64 */
-            id?: number;
+            id: number;
             /** Format: date-time */
-            createdDate?: string;
+            createdDate: string;
             /** Format: date-time */
-            modifiedDate?: string;
-            title?: string;
+            modifiedDate: string;
+            title: string;
             /** Format: int64 */
-            authorId?: number;
-            content?: string;
-            authorName?: string;
-            published?: boolean;
-            listed?: boolean;
+            authorId: number;
+            content: string;
+            authorName: string;
+            published: boolean;
+            listed: boolean;
         };
         RsDataPostWithContentDto: {
-            code?: string;
-            msg?: string;
-            data?: components["schemas"]["PostWithContentDto"];
+            code: string;
+            msg: string;
+            data: components["schemas"]["PostWithContentDto"];
         };
         WriteReqBody: {
             title: string;
@@ -258,23 +258,23 @@ export interface components {
             password: string;
         };
         LoginResBody: {
-            item?: components["schemas"]["MemberDto"];
-            apiKey?: string;
-            accessToken?: string;
+            item: components["schemas"]["MemberDto"];
+            apiKey: string;
+            accessToken: string;
         };
         MemberDto: {
             /** Format: int64 */
-            id?: number;
+            id: number;
             /** Format: date-time */
-            createdDate?: string;
+            createdDate: string;
             /** Format: date-time */
-            modifiedDate?: string;
-            nickname?: string;
+            modifiedDate: string;
+            nickname: string;
         };
         RsDataLoginResBody: {
-            code?: string;
-            msg?: string;
-            data?: components["schemas"]["LoginResBody"];
+            code: string;
+            msg: string;
+            data: components["schemas"]["LoginResBody"];
         };
         JoinReqBody: {
             username: string;
@@ -282,9 +282,9 @@ export interface components {
             nickname: string;
         };
         RsDataMemberDto: {
-            code?: string;
-            msg?: string;
-            data?: components["schemas"]["MemberDto"];
+            code: string;
+            msg: string;
+            data: components["schemas"]["MemberDto"];
         };
         PageDto: {
             items: components["schemas"]["PostDto"][];
@@ -299,49 +299,49 @@ export interface components {
         };
         PostDto: {
             /** Format: int64 */
-            id?: number;
+            id: number;
             /** Format: date-time */
-            createdDate?: string;
+            createdDate: string;
             /** Format: date-time */
-            modifiedDate?: string;
-            title?: string;
+            modifiedDate: string;
+            title: string;
             /** Format: int64 */
-            authorId?: number;
-            authorName?: string;
-            published?: boolean;
-            listed?: boolean;
+            authorId: number;
+            authorName: string;
+            published: boolean;
+            listed: boolean;
         };
         RsDataPageDto: {
-            code?: string;
-            msg?: string;
-            data?: components["schemas"]["PageDto"];
+            code: string;
+            msg: string;
+            data: components["schemas"]["PageDto"];
         };
         CommentDto: {
             /** Format: int64 */
-            id?: number;
-            content?: string;
+            id: number;
+            content: string;
             /** Format: int64 */
-            postId?: number;
+            postId: number;
             /** Format: int64 */
-            authorId?: number;
-            authorName?: string;
+            authorId: number;
+            authorName: string;
             /** Format: date-time */
-            createdTime?: string;
+            createdTime: string;
             /** Format: date-time */
-            modifiedTime?: string;
+            modifiedTime: string;
         };
         RsDataStatisticsResBody: {
-            code?: string;
-            msg?: string;
-            data?: components["schemas"]["StatisticsResBody"];
+            code: string;
+            msg: string;
+            data: components["schemas"]["StatisticsResBody"];
         };
         StatisticsResBody: {
             /** Format: int64 */
-            postCount?: number;
+            postCount: number;
             /** Format: int64 */
-            postPublishedCount?: number;
+            postPublishedCount: number;
             /** Format: int64 */
-            postListedCount?: number;
+            postListedCount: number;
         };
     };
     responses: never;
