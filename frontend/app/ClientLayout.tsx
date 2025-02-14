@@ -18,6 +18,8 @@ export default function ClientLayout({
         </header>
         <div className="flex-grow">{children}</div>
         <footer>푸터</footer>
+
+        <input type="text"/>
       </body>
     </html>
   );

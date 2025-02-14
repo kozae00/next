@@ -1,10 +1,6 @@
-import createClient from "openapi-fetch";
+import client from "@/src/lib/backend/client";
 import ClientPage from "./ClientPage";
-import { paths } from "@/src/lib/backend/apiV1/schema";
 
-const client = createClient<paths>({
-  baseUrl: "http://localhost:8080",
-});
 export default async function Page({
   params,
 }: {
@@ -22,8 +18,8 @@ export default async function Page({
     },
   });
 
-  if(response.error) {
-    return <div>{response.error.msg}</div>
+  if (response.error) {
+    return <div>{response.error.msg}</div>;
   }
 
   const rsData = response.data;
