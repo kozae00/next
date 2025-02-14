@@ -97,6 +97,3 @@ export default function ClinetPage({
     </div>
   );
 }
-function userRouter() {
-  throw new Error("Function not implemented.");
-}
