@@ -1,3 +1,5 @@
+"use client";
+
 import { components } from "@/lib/backend/apiV1/schema";
 
 export default function ClinetPage({
