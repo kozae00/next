@@ -1,6 +1,6 @@
 "use client";
 
-import client from "@/lib/backend/client";
+import client from "@/src/lib/backend/client";
 import { useRouter } from "next/navigation";
 
 export default function ClinetPage() {
@@ -49,7 +49,7 @@ export default function ClinetPage() {
 
   return (
     <>
-      <div>회원 가입 페이지</div>
+      <div>회원가입 페이지</div>
 
       <form onSubmit={join} className="flex flex-col w-1/4 gap-3">
         <input

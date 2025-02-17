@@ -1,6 +1,6 @@
-import client from "@/lib/backend/client";
-import ClientPage from "./ClientPage";
 import { cookies } from "next/headers";
+import ClientPage from "./ClientPage";
+import client from "@/src/lib/backend/client";
 
 export default async function Page() {
   const response = await client.GET("/api/v1/members/me", {

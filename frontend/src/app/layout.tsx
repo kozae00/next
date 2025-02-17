@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ClinetLayout from "./ClientLayout";
-import client from "@/lib/backend/client";
+import ClientLayout from "./ClientLayout";
+
 import { cookies } from "next/headers";
+import ClinetLayout from "./ClientLayout";
+import client from "@/src/lib/backend/client";
 
 export const metadata: Metadata = {
   title: "Create Next App",
