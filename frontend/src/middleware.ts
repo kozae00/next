@@ -1,12 +1,23 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
+import client from "./lib/backend/client";
+import { cookies } from "next/headers";
 
-// This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
-  console.log("middleware");
+export async function middleware(request: NextRequest) {
+  const reqToken = request.cookies.get("accessToken");
+  const nextResponse = NextResponse.next();
+
+  const response = await client.GET("/api/v1/members/me", {
+    headers: {
+      cookie: (await cookies()).toString(),
+    },
+  });
+
+  const springCookie = response.response.headers.getSetCookie();
+  nextResponse.headers.set("set-cookie", String(springCookie));
+
+  return nextResponse;
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: "/:path*",
 };
