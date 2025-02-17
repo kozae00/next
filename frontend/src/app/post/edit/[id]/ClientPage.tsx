@@ -1,9 +1,14 @@
 "use client";
 
+import { components } from "@/lib/backend/apiV1/schema";
 import client from "@/lib/backend/client";
 import { useRouter } from "next/navigation";
 
-export default function ClinetPage() {
+export default function ClinetPage({
+  post,
+}: {
+  post: components["schemas"]["PostWithContentDto"];
+}) {
   const router = useRouter();
 
   async function write(e: React.FormEvent<HTMLFormElement>) {
@@ -26,22 +31,26 @@ export default function ClinetPage() {
       return;
     }
 
-    // client.PUT("/api/v1/posts/{id}", {
-    //   body: {
-    //     content
-    //   },
-    //   credentials: "include",
-    // });
+    const response = await client.PUT("/api/v1/posts/{id}", {
+      params: {
+        path: { id: post.id },
+      },
+      body: {
+        title,
+        content,
+        published,
+        listed,
+      },
+      credentials: "include",
+    });
 
-    // if (response.error) {
-    //   alert(response.error.msg);
-    //   return;
-    // }
+    if (response.error) {
+      alert(response.error.msg);
+      return;
+    }
 
-    // const post = response.data.data;
-
-    // // 목록으로 이동, 내가 방금 작성한 글 상세 페이지 이동 => 리액트 방식의 페이지 이동
-    // router.push(`/post/${post.id}`);
+    // 목록으로 이동, 내가 방금 작성한 글 상세 페이지 이동 => 리액트 방식의 페이지 이동
+    router.push(`/post/${post.id}`);
   }
 
   return (
@@ -51,20 +60,29 @@ export default function ClinetPage() {
       <form onSubmit={write} className="flex flex-col w-1/4 gap-3">
         <div className="flex gap-3">
           <label>공개 여부 : </label>
-          <input type="checkbox" name="published" />
+          <input
+            type="checkbox"
+            name="published"
+            defaultChecked={post.published}
+          />
         </div>
         <div className="flex gap-3">
           <label>검색 여부 : </label>
-          <input type="checkbox" name="listed" />
+          <input type="checkbox" name="listed" defaultChecked={post.listed} />
         </div>
         <input
           type="text"
           name="_title"
           placeholder="제목 입력"
           className="border-2 border-black"
+          defaultValue={post.title}
         />
-        <textarea name="content" className="border-2 border-black"></textarea>
-        <input type="submit" value="등록" />
+        <textarea
+          name="content"
+          className="border-2 border-black"
+          defaultValue={post.content}
+        ></textarea>
+        <input type="submit" value="수정" />
       </form>
     </>
   );
