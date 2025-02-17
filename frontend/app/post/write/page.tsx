@@ -1,5 +1,5 @@
-import client from "@/src/lib/backend/client";
-import { components } from "@/src/lib/backend/apiV1/schema";
+import { components } from "@/lib/backend/apiV1/schema";
+import client from "@/lib/backend/client";
 import { useRouter } from "next/navigation";
 
 export default function ClinetPage({

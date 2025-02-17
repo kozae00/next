@@ -148,7 +148,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** 통계 조회 */
+        /** 통계 조회12 */
         get: operations["getStatistics"];
         put?: never;
         post?: never;
@@ -185,7 +185,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** 내 정보 조회 */
+        /** 내 정보 조회12 */
         get: operations["me"];
         put?: never;
         post?: never;
@@ -450,7 +450,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
+                    "application/json;charset=UTF-8": components["schemas"]["RsDataEmpty"];
                 };
             };
             /** @description Internal Server Error */

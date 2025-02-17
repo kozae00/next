@@ -1,4 +1,4 @@
-import client from "@/src/lib/backend/client";
+import client from "@/lib/backend/client";
 import ClientPage from "./ClientPage";
 import path from "path";
 

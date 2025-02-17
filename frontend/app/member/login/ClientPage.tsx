@@ -1,6 +1,6 @@
 "use client";
 
-import client from "@/src/lib/backend/client";
+import client from "@/lib/backend/client";
 
 export default function ClinetPage() {
   async function login(e: React.FormEvent<HTMLFormElement>) {
