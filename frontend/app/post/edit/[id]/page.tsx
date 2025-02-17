@@ -1,4 +1,4 @@
-import client from "@/lib/backend/client";
+import client from "@/src/lib/backend/client";
 import ClientPage from "./ClientPage";
 import path from "path";
 
@@ -21,7 +21,7 @@ export default async function Page({
   });
 
   if (response.error) {
-    alert(response.error.msg);
+    console.log(response.error.msg);
     return;
   }
 

@@ -4,7 +4,7 @@ import ClientLayout from "./ClientLayout";
 
 import { cookies } from "next/headers";
 import ClinetLayout from "./ClientLayout";
-import client from "@/lib/backend/client";
+import client from "@/src/lib/backend/client";
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -1,6 +1,6 @@
 "use client";
 
-import { components } from "@/lib/backend/apiV1/schema";
+import { components } from "@/src/lib/backend/apiV1/schema";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
