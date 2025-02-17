@@ -450,7 +450,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json;charset=UTF-8": components["schemas"]["RsDataEmpty"];
+                    "application/json;charset=UTF-8": components["schemas"]["RsDataVoid"];
                 };
             };
             /** @description Internal Server Error */
