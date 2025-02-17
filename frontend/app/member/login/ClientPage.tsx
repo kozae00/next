@@ -11,6 +11,16 @@ export default function ClinetPage() {
     const username = form.username.value;
     const password = form.password.value;
 
+    if (username.trim().length === 0) {
+      alert("아이디를 입력해주세요.");
+      return;
+    }
+
+    if (password.trim().length === 0) {
+      alert("패스워드를 입력해주세요.");
+      return;
+    }
+
     const response = await client.POST("/api/v1/members/login", {
       body: {
         username,
