@@ -1,4 +1,4 @@
-import client from "@/src/lib/backend/client";
+import client from "@/lib/backend/client";
 import ClinetPage from "./ClientPage";
 
 export default async function Page({
@@ -29,8 +29,7 @@ export default async function Page({
     },
   });
 
-  const rsData = response.data!!; // 여기는 null 이나 undefined가 절대 들어오지 않는다.
-  const pageDto = rsData.data;
+  const rsData = response.data!!;
 
   return (
     <ClinetPage

@@ -7,4 +7,5 @@ const client = createClient<paths>({
     "Content-Type": "application/json",
   },
 });
+
 export default client;

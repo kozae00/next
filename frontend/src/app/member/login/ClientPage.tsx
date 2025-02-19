@@ -1,6 +1,6 @@
 "use client";
 
-import client from "@/src/lib/backend/client";
+import client from "@/lib/backend/client";
 
 export default function ClinetPage() {
   async function login(e: React.FormEvent<HTMLFormElement>) {
@@ -34,8 +34,8 @@ export default function ClinetPage() {
       return;
     }
 
-    // router.push(`/post/list`);
-    window.location.href = "/post/list";
+    // router.push(`/post/list`); // 브라우저 방식 X, 넥스트JS 방식
+    window.location.href = "/post/list"; // 브라우저 방식
   }
 
   return (
