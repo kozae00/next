@@ -13,6 +13,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export default function ClinetLayout({
   children,
@@ -43,7 +45,7 @@ export default function ClinetLayout({
   return (
     <html lang="en" className={`${fontVariable}`}>
       <body className={`min-h-[100dvh] flex flex-col ${fontClassName}`}>
-        <header className="flex justify-end gap-3">
+        <header className="flex justify-end gap-3 px-4">
           <DropdownMenu>
             <DropdownMenuTrigger>Home</DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -63,12 +65,12 @@ export default function ClinetLayout({
                   <Link href="/post/write">글 작성</Link>
                 </DropdownMenuItem>
               )}
-              {isLogined && (
+              {!isLogined && (
                 <DropdownMenuItem>
                   <Link href="/member/login">로그인</Link>
                 </DropdownMenuItem>
               )}
-              {isLogined && (
+              {!isLogined && (
                 <DropdownMenuItem>
                   <Link href="/member/join">회원 가입</Link>
                 </DropdownMenuItem>
